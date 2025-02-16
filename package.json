@@ -1,0 +1,23 @@
+{
+  "name": "roundtable-ai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.9.1",
+    "@types/node": "^22.13.4",
+    "aws-amplify": "^6.13.0",
+    "aws-cdk-lib": "^2.178.2",
+    "constructs": "^10.4.2"
+  },
+  "devDependencies": {
+    "cypress": "^14.0.3"
+  }
+}

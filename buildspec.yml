@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - npm install -g aws-cdk
+      - npm install
+  build:
+    commands:
+      - chmod +x generate-aws-exports.sh
+      - ./generate-aws-exports.sh
+      - npm run build
+      - npx cdk synth
+artifacts:
+  files:
+    - '**/*'
