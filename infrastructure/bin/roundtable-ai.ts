@@ -107,21 +107,21 @@ export class RoundtableAiStack extends cdk.Stack {
 
     // Lambda Function for handling user profile operations
     const profileHandler = new lambda.Function(this, 'ProfileHandler', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       handler: 'profileHandler.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda')),
     });
 
     // Lambda Function for handling chat operations
     const chatHandler = new lambda.Function(this, 'ChatHandler', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       handler: 'chatHandler.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda')),
     });
 
     // Lambda Function for handling GPT configuration CRUD operations
     const gptConfigHandler = new lambda.Function(this, 'GptConfigHandler', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       handler: 'gptConfigHandler.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda')),
       environment: {
@@ -132,7 +132,7 @@ export class RoundtableAiStack extends cdk.Stack {
 
     // Lambda Function for handling Roundtable CRUD operations
     const roundtableHandler = new lambda.Function(this, 'RoundtableHandler', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       handler: 'roundtableHandler.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda')),
       environment: {
@@ -143,7 +143,7 @@ export class RoundtableAiStack extends cdk.Stack {
 
     // Lambda Function for handling Chat Session logging
     const chatSessionHandler = new lambda.Function(this, 'ChatSessionHandler', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       handler: 'chatSessionHandler.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda')),
       environment: {
