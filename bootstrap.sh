@@ -5,10 +5,10 @@ set -e
 rm -rf ~/.cache/Cypress
 
 # Get the AWS Account ID and Region
-ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
-REGION="us-east-1"
+CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
+CDK_DEFAULT_REGION="us-east-1"
 
-echo "Bootstrapping CDK in account: $ACCOUNT, region: $REGION"
+echo "Bootstrapping CDK in account: $CDK_DEFAULT_ACCOUNT, region: $CDK_DEFAULT_REGION"
 
 npm ci --production
 
@@ -17,5 +17,5 @@ npm ci --production
 export CI_SKIP_CYPRESS=true
 
 # Bootstrap the CDK environment dynamically
-npx cdk bootstrap aws://$ACCOUNT/$REGION
+npx cdk bootstrap aws://$CDK_DEFAULT_ACCOUNT/$CDK_DEFAULT_REGION
 npx cdk deploy RoundtableAiStack
