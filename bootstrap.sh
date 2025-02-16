@@ -18,6 +18,10 @@ npm run build
 # For example, you might set an environment variable to skip installing dev dependencies.
 export CI_SKIP_CYPRESS=true
 
+# Generate the aws-exports.js file from environment variables
+chmod +x generate-aws-exports.sh
+./generate-aws-exports.sh
+
 # Bootstrap the CDK environment dynamically
 npx cdk bootstrap aws://$CDK_DEFAULT_ACCOUNT/$CDK_DEFAULT_REGION
 npx cdk deploy RoundtableAiStack

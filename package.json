@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:e2e": "cypress run"
@@ -28,6 +29,7 @@
     "webpack-cli": "^6.0.1"
   },
   "devDependencies": {
-    "cypress": "^14.0.3"
+    "cypress": "^14.0.3",
+    "webpack-dev-server": "^5.2.0"
   }
 }
