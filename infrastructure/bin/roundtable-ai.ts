@@ -34,7 +34,7 @@ export class RoundtableAiStack extends cdk.Stack {
 
     // Deploy static assets (e.g. index.html) from the local 'website-content' directory to the bucket
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
-      sources: [s3deploy.Source.asset('./website-content')],
+      sources: [s3deploy.Source.asset('./build')],
       destinationBucket: websiteBucket,
     });
 
