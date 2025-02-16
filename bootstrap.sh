@@ -6,11 +6,12 @@ rm -rf ~/.cache/Cypress
 
 # Get the AWS Account ID and Region
 CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
-CDK_DEFAULT_REGION="us-east-1"
+AWS_REGION="us-east-1"
+CDK_DEFAULT_REGION=$AWS_REGION
 
 echo "Bootstrapping CDK in account: $CDK_DEFAULT_ACCOUNT, region: $CDK_DEFAULT_REGION"
 
-npm ci --production
+npm ci --omit=dev
 
 # Optionally, skip Cypress installation if not needed in this environment.
 # For example, you might set an environment variable to skip installing dev dependencies.
