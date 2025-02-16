@@ -11,6 +11,8 @@ import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as path from 'path';
 
+const app = new cdk.App();
+
 export class RoundtableAiStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
@@ -151,3 +153,6 @@ export class RoundtableAiStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'UserPoolClientId', { value: userPoolClient.userPoolClientId });
   }
 }
+
+new RoundtableAiStack(app, 'RoundtableAiStack');
+app.synth();
