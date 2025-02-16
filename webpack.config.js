@@ -1,12 +1,12 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  entry: './src/pages/index.js', // adjust if your entry point is different
+  entry: './src/pages/index.js', // Adjust if needed
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   mode: 'production',
   module: {
@@ -14,24 +14,21 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-      // Add additional rules for images/fonts as needed
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+      // add more rules if necessary
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html' // path to your HTML template
-    })
+      template: './public/index.html', // This should match the location of your index.html file
+    }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
-  devServer: {
-    historyApiFallback: true,
-  }
 };

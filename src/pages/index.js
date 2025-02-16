@@ -1,13 +1,12 @@
 import React from 'react';
 import { Amplify } from 'aws-amplify';
 import awsmobile from '../aws-exports';
-import { Auth } from 'aws-amplify';
 
 Amplify.configure(awsmobile);
 
 export default function Home() {
   const signIn = () => {
-    Auth.federatedSignIn(); // Redirects to the Cognito Hosted UI
+    Amplify.Auth.federatedSignIn(); // Using Amplify.Auth instead of importing Auth separately
   };
 
   return (
