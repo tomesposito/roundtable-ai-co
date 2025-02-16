@@ -10,8 +10,7 @@ REGION="us-east-1"
 
 echo "Bootstrapping CDK in account: $ACCOUNT, region: $REGION"
 
-npm install aws-cdk-lib constructs
-npm install --save-dev @types/node
+npm ci --production
 
 # Optionally, skip Cypress installation if not needed in this environment.
 # For example, you might set an environment variable to skip installing dev dependencies.
